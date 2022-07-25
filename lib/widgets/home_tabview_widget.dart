@@ -17,95 +17,93 @@ class HomeTabviewWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(left: 10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.only(right: 10),
+    return Padding(
+      padding: EdgeInsets.only(left: 10),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(right: 10),
+              height: 180,
+              width: SizeConfig.width,
+              decoration: BoxDecoration(
+                  color: Colors.grey[800],
+                  image: DecorationImage(
+                      image: AssetImage(mainProduct.image),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(35)),
+              child: Container(
                 height: 180,
-                width: SizeConfig.width,
-                decoration: BoxDecoration(
-                    color: Colors.grey[800],
-                    image: DecorationImage(
-                        image: AssetImage(mainProduct.image),
-                        fit: BoxFit.cover),
-                    borderRadius: BorderRadius.circular(35)),
-                child: Container(
-                  height: 180,
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(35)),
-                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              mainProduct.name,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.star,
-                                  color: Colors.yellow,
-                                ),
-                                Text(
-                                  mainProduct.rating.toString(),
-                                  style: TextStyle(color: Colors.white),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(35)),
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedHeight(8),
-                          ClipRRect(
-                            child: BackdropFilter(
-                              filter: ImageFilter.blur(sigmaX: 3, sigmaY: 6),
-                              child: Container(
-                                alignment: Alignment.center,
-                                height: 25,
-                                width: 45,
-                                decoration: BoxDecoration(
-                                    color: Colors.grey.withOpacity(.1),
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Text(
-                                  '2/8',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
+                          Text(
+                            mainProduct.name,
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                              ),
+                              Text(
+                                mainProduct.rating.toString(),
+                                style: TextStyle(color: Colors.white),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                        child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        SizedHeight(8),
+                        ClipRRect(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 6),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 25,
+                              width: 45,
+                              decoration: BoxDecoration(
+                                  color: Colors.grey.withOpacity(.1),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: Text(
+                                '2/8',
+                                style: TextStyle(
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
                           ),
-                          Spacer(),
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: Colors.grey.withOpacity(.3),
-                            child: PlayWidget())
-                        ],
-                      ))
-                    ],
-                  ),
+                        ),
+                        Spacer(),
+                        CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Colors.grey.withOpacity(.3),
+                          child: PlayWidget())
+                      ],
+                    ))
+                  ],
                 ),
               ),
-              SizedHeight(20),
-              buildSquareCards("Popular"),
-              SizedHeight(40),
-              buildSquareCards("You may like")
-            ],
-          ),
+            ),
+            SizedHeight(20),
+            buildSquareCards("Popular"),
+            SizedHeight(40),
+            buildSquareCards("You may like")
+          ],
         ),
       ),
     );   

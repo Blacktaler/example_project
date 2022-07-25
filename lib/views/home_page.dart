@@ -108,8 +108,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             Expanded(
                               child: TextFormField(
                                 style: TextStyle(color: Colors.white),
+                                
                                 scrollPadding: EdgeInsets.zero,
                                 decoration: InputDecoration(
+                                    prefixIcon: Container(
+                                      padding: EdgeInsets.symmetric(horizontal: 10),
+                                      alignment: Alignment.centerLeft,
+                                      child: Text("Search movie, series..",style: TextStyle(color: Colors.white70),)),
                                     contentPadding:
                                         EdgeInsets.symmetric(horizontal: (5)),
                                     fillColor: Colors.grey[900],
@@ -139,6 +144,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       Container(
                         height: 30,
                         child: TabBar(
+                          labelPadding: EdgeInsets.zero,
                             indicator: BoxDecoration(
                                 gradient: indicatorGradient(),
                                 borderRadius: BorderRadius.circular(7)),
@@ -246,7 +252,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   ) {
     return Container(
         alignment: Alignment.center,
-        width: title.length.toDouble() * 14,
+        width: title.length.toDouble() * 12,
         child: Text(title));
   }
 
